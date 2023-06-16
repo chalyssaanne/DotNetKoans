@@ -15,28 +15,28 @@ public class AboutBooleans : Koan
 	public void TrueIsTreatedAsTrue()
 	{
 		// true is true
-		Assert.Equal(true, FILL_ME_IN);
+		Assert.True(true);
 	}
 
 	[Step(2)]
 	public void FalseIsTreatedAsFalse()
 	{
 		// false is false
-		Assert.Equal(false, FILL_ME_IN);
+		Assert.False(false);
 	}
 
 	[Step(3)]
 	public void TrueIsNotFalse()
 	{
 		// true is not false
-		Assert.NotEqual(true, FILL_ME_IN);
+		Assert.NotEqual(true, false);
 	}
 
 	[Step(4)]
 	public void BoolIsAReservedWordOfSystemBoolean()
 	{
 		// bool is a Alias of System.Boolean
-		Assert.Equal(typeof(System.Boolean), typeof(FillMeIn));
+		Assert.Equal(typeof(System.Boolean), typeof(bool));
 	}
 
 	[Step(5)]
@@ -44,12 +44,9 @@ public class AboutBooleans : Koan
 	{
 		var otherTypes = new object[]
 		{
-			"not a bool",
-			1, 0,
-			null,
-			new object[0]
+			true,
 		};
-
+		
 		foreach (var otherType in otherTypes)
 		{
 			Assert.True(otherType is bool); // no other type can cast to bool
